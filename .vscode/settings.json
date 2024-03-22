@@ -1,0 +1,5 @@
+{
+    "appService.preDeployTask": "publish-release",
+    "appService.deploySubpath": "OptimizeBusRouteAPI\\bin\\Release\\net6.0\\publish",
+    "appService.defaultWebAppToDeploy": "/subscriptions/0d9a1fc9-7087-4a74-a749-dc2a31b8727e/resourceGroups/rgteamwater/providers/Microsoft.Web/sites/metrobusapp"
+}

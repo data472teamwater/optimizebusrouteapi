@@ -2439,26 +2439,24 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Camila\\.nuget\\packages\\": {}
+    "C:\\Users\\sridh\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\PGDIP (Applied Data Science)\\DATA472\\Group Project\\Source Code\\optimizebusrouteapi\\OptimizeBusRouteAPI\\OptimizeBusRouteAPI.csproj",
+      "projectUniqueName": "C:\\Users\\sridh\\OneDrive - University of Canterbury\\Study\\472\\GroupProject\\api\\optimizebusrouteapi\\OptimizeBusRouteAPI\\OptimizeBusRouteAPI.csproj",
       "projectName": "OptimizeBusRouteAPI",
-      "projectPath": "D:\\PGDIP (Applied Data Science)\\DATA472\\Group Project\\Source Code\\optimizebusrouteapi\\OptimizeBusRouteAPI\\OptimizeBusRouteAPI.csproj",
-      "packagesPath": "C:\\Users\\Camila\\.nuget\\packages\\",
-      "outputPath": "D:\\PGDIP (Applied Data Science)\\DATA472\\Group Project\\Source Code\\optimizebusrouteapi\\OptimizeBusRouteAPI\\obj\\",
+      "projectPath": "C:\\Users\\sridh\\OneDrive - University of Canterbury\\Study\\472\\GroupProject\\api\\optimizebusrouteapi\\OptimizeBusRouteAPI\\OptimizeBusRouteAPI.csproj",
+      "packagesPath": "C:\\Users\\sridh\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\sridh\\OneDrive - University of Canterbury\\Study\\472\\GroupProject\\api\\optimizebusrouteapi\\OptimizeBusRouteAPI\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\Camila\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        "C:\\Users\\sridh\\AppData\\Roaming\\NuGet\\NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "net6.0"
       ],
       "sources": {
-        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
@@ -2526,7 +2524,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.202\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.203\\RuntimeIdentifierGraph.json"
       }
     }
   }
