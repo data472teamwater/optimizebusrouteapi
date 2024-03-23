@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("OptimizeBusRouteAPI")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Release")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+7a4888c1f1c7873a27c6d9ba78197546acccc819")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+d9c9dc3234ca36c7ebc11ea25f337017f39ee0bd")]
 [assembly: System.Reflection.AssemblyProductAttribute("OptimizeBusRouteAPI")]
 [assembly: System.Reflection.AssemblyTitleAttribute("OptimizeBusRouteAPI")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
