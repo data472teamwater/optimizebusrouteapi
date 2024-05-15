@@ -1,6 +1,12 @@
 ﻿using OptimizeBusRouteAPI.Entities;
 using OptimizeBusRouteAPI.Repositories;
 using Microsoft.AspNetCore.Mvc;
+using static OptimizeBusRouteAPI.Data.DbContextClass;
+using Newtonsoft.Json;
+using System.Text.Json.Serialization;
+using System.Text.Json;
+using JsonSerializer = System.Text.Json.JsonSerializer;
+using System.Data;
 
 namespace OptimizeBusRouteAPI.Controllers
 {
@@ -8,31 +14,73 @@ namespace OptimizeBusRouteAPI.Controllers
     [ApiController]
     public class MapsController : Controller
     {
-        private readonly IMapsService mapsService;
 
-        public MapsController(IMapsService mapsService)
+        private readonly IConfiguration _config;
+        public MapsController(IConfiguration config)
         {
-            this.mapsService = mapsService;
+            _config = config;
         }
 
+
+        [HttpGet("GetAllRoutes")]
+        public async Task<IActionResult> GetAllRoutesAsync()
+        {
+            // Initialize tripData
+            OutData routes = new OutData();
+
+            // Call the service to get trip data
+            MapsService service = new MapsService(_config);
+            routes = await service.GetAllRoutes();
+
+            var jsonData = routes.ResponseData.Tables[0];
+            string jsonResult = JsonConvert.SerializeObject(jsonData, Formatting.Indented);
+            return Ok(jsonResult);
+        }
+
+        [HttpGet("GetAllTripsByRoute")]
+        public async Task<IActionResult> GetAllTripsByRouteAsync(string RouteID)
+        {
+            // Initialize tripData
+            OutData routes = new OutData();
+
+            // Call the service to get trip data
+            MapsService service = new MapsService(_config);
+            routes = await service.GetAllTripsByRoute(RouteID);
+
+            var jsonData = routes.ResponseData.Tables[0];
+            string jsonResult = JsonConvert.SerializeObject(jsonData, Formatting.Indented);
+            return Ok(jsonResult);
+        }
+
+
         [HttpGet("GetTripData")]
-        public async Task<IEnumerable<TripData>> GetTripDataAsync(string Id)
+        public async Task<IActionResult> GetTripDataAsync(string RouteId, Int32 TripID)
         {
             try
             {
-                var response = await mapsService.GetTripData(Id);
+                // Initialize tripData
+                OutData tripData = new OutData();
 
-                if (response == null)
+                // Call the service to get trip data
+                MapsService service = new MapsService(_config);
+                tripData = await service.GetTripData(RouteId, TripID);
+
+                // Check if tripData.ResponseData is null and handle accordingly
+                if (tripData.ResponseData == null)
                 {
-                    return null;
+                    return NotFound(); 
                 }
 
-                return response;
+                var jsonData = tripData.ResponseData.Tables[0];
+                string jsonResult = JsonConvert.SerializeObject(jsonData, Formatting.Indented);
+                return Ok(jsonResult);
             }
-            catch
+            catch (Exception ex)
             {
-                throw;
+                // Return an error response
+                return StatusCode(StatusCodes.Status500InternalServerError, "An error occurred while processing your request.");
             }
         }
+
     }
 }
