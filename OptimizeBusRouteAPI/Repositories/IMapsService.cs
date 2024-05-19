@@ -9,5 +9,6 @@ namespace OptimizeBusRouteAPI.Repositories
         public Task<IEnumerable<dynamic>> GetAllRoutes();
         public Task<IEnumerable<dynamic>> GetAllTripsByRoute(string RouteID);
         public Task<IEnumerable<dynamic>> GetMetroTripRoutes(string RouteID, Int32 TripID);
+        public Task<IEnumerable<dynamic>> GetConstructionSites();
     }
 }
