@@ -101,6 +101,25 @@ namespace OptimizeBusRouteAPI.Repositories
             }
         }
 
+        public async Task<OutData> GetConstructionSites()
+        {
+            try
+            {
+                OutData sites = new OutData();
+                DbContextClass _dbContext = new DbContextClass(_config);
+        
+                SqlParameter[] Rparams =
+                {
+                        new SqlParameter("@ID", SqlDbType.VarChar) { Value = "" }
+                    };
+                sites = await _dbContext.get_Procedure_output_ds("SPGetConstructionSites", Rparams);
+                return sites;
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
+        }
 
     }
 }
