@@ -82,5 +82,16 @@ namespace OptimizeBusRouteAPI.Controllers
             }
         }
 
+        [HttpGet("GetConstructionSites")]
+        public async Task<IActionResult> GetConstructionSitesAsync()
+        {
+            OutData sites = new OutData();
+            MapsService service = new MapsService(_config);
+            sites = await service.GetConstructionSites();
+
+            var jsonData = sites.ResponseData.Tables[0];
+            string jsonResult = JsonConvert.SerializeObject(jsonData, Formatting.Indented);
+            return Ok(jsonResult);
+        }
     }
 }
